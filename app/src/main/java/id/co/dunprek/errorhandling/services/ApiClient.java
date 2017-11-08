@@ -15,7 +15,7 @@ public class ApiClient {
 
     private ApiInterface mApiInterface;
 
-    private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+    public  static Retrofit retrofit ;
 
 
     public ApiInterface getApiInterface() {
@@ -31,10 +31,8 @@ public class ApiClient {
             Gson gson = new GsonBuilder()
                     .setLenient()
                     .create();
-
-            Retrofit retrofit = new Retrofit.Builder()
+                    retrofit= new Retrofit.Builder()
                     .baseUrl(Constants.BASE_URL +Constants.BASE_VERSION)
-
                     .client(client.build())
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();

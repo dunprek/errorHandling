@@ -17,8 +17,10 @@ import java.util.List;
 
 import id.co.dunprek.errorhandling.BaseActivity;
 import id.co.dunprek.errorhandling.R;
+import id.co.dunprek.errorhandling.model.APIError;
 import id.co.dunprek.errorhandling.model.CheckVersion;
 import id.co.dunprek.errorhandling.services.ApiClient;
+import id.co.dunprek.errorhandling.utils.ErrorUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -58,6 +60,8 @@ public class FirstActivity extends BaseActivity {
                     } else {
                         textView.setText("no version");
                     }
+                }else{
+                    showAlertError(response);
                 }
             }
 

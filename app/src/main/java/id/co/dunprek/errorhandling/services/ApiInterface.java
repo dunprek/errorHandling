@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-    @GET("pub_data/apk_ver")
+    @GET("pub_data/apk_ver1")
     Call<CheckVersion> getCheckVersion();
 
 }
